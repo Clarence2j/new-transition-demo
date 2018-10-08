@@ -47,7 +47,6 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        publicPath: '../../',
         fallback: 'vue-style-loader'
       })
     } else {
@@ -61,19 +60,7 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    // 全局scss文件配置，css文件可以在main.js中可以直接import，而scss文件import会报错，解决如下
-    // 安装node-sass、sass-loader、style-loader、安装sass-resources-loader
-    // 修改此处，注释第一行，改为scss的如下配置，病配置全局scss文件
-    //
-    scss: generateLoaders('sass').concat(
-      {
-        loader: 'sass-resources-loader',
-        options: {
-          resources: path.resolve(__dirname, '../src/common/scss/index.scss')
-        }
-      }
-    ),
-    // scss: generateLoaders('sass'),
+    scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

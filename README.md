@@ -1,6 +1,6 @@
-# router-test
+# new-transition-demo
 
-> A Vue.js project
+> 一个稍微复杂的过渡动画demo
 
 ## Build Setup
 
